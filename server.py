@@ -22,13 +22,13 @@ DB_FILE = "users.db"
 # Email configuration
 SMTP_SERVER = os.environ.get("SMTP_SERVER", "smtp.gmail.com")
 SMTP_PORT = int(os.environ.get("SMTP_PORT", 587))
-EMAIL_USER = os.environ.get("EMAIL_USER", "manoj20062707@gmail.com")
-EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD", "meip jgzl woqm iqrj")
+EMAIL_USER = os.environ.get("EMAIL_USER")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
 # Twilio configuration for SMS
-TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID", "AC0ffb3e8d8a43c64e3734838715291f7f")
-TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN", "e5437db18f91f7f9e027f0468c6a4ac5")
-TWILIO_PHONE = os.environ.get("TWILIO_PHONE", "+15134476891")
+TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
+TWILIO_PHONE = os.environ.get("TWILIO_PHONE")
 
 # --- DB SETUP ---
 def init_db():
@@ -670,4 +670,5 @@ def cleanup_expired_data():
 if __name__ == '__main__':
     init_db()
     port = int(os.environ.get("PORT", 8080))
+
     app.run(host="0.0.0.0", port=port, debug=True)
